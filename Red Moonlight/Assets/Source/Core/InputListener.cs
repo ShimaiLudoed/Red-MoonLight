@@ -1,14 +1,27 @@
+using Player;
+using System;
 using UnityEngine;
 
-public class InputListener : MonoBehaviour
+namespace Core
 {
-    void Start()
+  public class InputListener : MonoBehaviour
+  {
+    private  PlayerController _playerController;
+
+    public void Construct(PlayerController playerController)
     {
-        
+      _playerController = playerController;
     }
 
-    void Update()
+    private void Update()
     {
-        
+      if ( _playerController != null )
+      {
+        float horizontal;
+        horizontal=Input.GetAxis("Horizontal");
+        Vector2 vec = new Vector2(horizontal, 0).normalized;
+        _playerController.Move(vec);
+      }
     }
+  }
 }
