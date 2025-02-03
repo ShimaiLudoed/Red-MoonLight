@@ -1,5 +1,7 @@
-
-public class PlayerModel 
+namespace Player
 {
-
+  public class PlayerModel
+  {
+    
+  }
 }

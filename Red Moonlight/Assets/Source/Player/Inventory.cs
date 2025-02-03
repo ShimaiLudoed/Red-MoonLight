@@ -1,16 +1,17 @@
 using UnityEngine;
 
-public class Inventory : MonoBehaviour
+namespace Player
 {
-    // Start is called before the first frame update
-    void Start()
+    public class Inventory : MonoBehaviour
     {
-        
-    }
+        void Start()
+        {
+            
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        void Update()
+        {
+            
+        }
     }
 }

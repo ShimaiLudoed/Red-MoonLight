@@ -1,16 +1,17 @@
 using UnityEngine;
 
-public class PlayerQuest : MonoBehaviour
+namespace Player
 {
-    // Start is called before the first frame update
-    void Start()
+    public class PlayerQuest : MonoBehaviour
     {
+        void Start()
+        {
+            
+        }
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        void Update()
+        {
+            
+        }
     }
 }
