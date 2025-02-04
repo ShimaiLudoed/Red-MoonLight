@@ -5,17 +5,18 @@ namespace Player
 {
   public class ItemPickUP : MonoBehaviour
   {
-    public ItemSO item; // Ссылка на ScriptableObject
+    [SerializeField] private ItemSO item; 
     [SerializeField] private Inventory inventory;
-    private bool _isInRange; // Флаг для проверки, находится ли игрок в зоне подбора
+    private bool _isInRange; 
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+      //TODO Сделать по слою
       if (other.CompareTag("Player"))
       {
-        InputListener.OnPickupItem += PickUP;
-        _isInRange = true; // Игрок вошел в зону действия
-        Debug.Log("Нажмите E, чтобы подобрать предмет: " + item.itemName);
+        InputListener.OnInteract += PickUP;
+        _isInRange = true; 
+        Debug.Log("Нажмите E, чтобы подобрать предмет: " + item.ItemName);
       }
     }
 
@@ -23,20 +24,19 @@ namespace Player
     {
       if (other.CompareTag("Player"))
       {
-        InputListener.OnPickupItem -= PickUP;
-        _isInRange = false; // Игрок вышел из зоны действия
+        InputListener.OnInteract -= PickUP;
+        _isInRange = false; 
       }
     }
 
     private void PickUP()
     {
-      // Проверяем, если игрок в зоне подбора и нажал клавишу "E"
       if (_isInRange)
       {
         if (inventory != null)
         {
-          inventory.AddItem(item); // Добавляем предмет в инвентарь
-          Destroy(gameObject); // Удаляем предмет после подбора
+          inventory.AddItem(item); 
+          Destroy(gameObject); 
         }
       }  
     }

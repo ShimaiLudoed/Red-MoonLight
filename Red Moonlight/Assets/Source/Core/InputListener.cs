@@ -6,8 +6,10 @@ namespace Core
 {
   public class InputListener : MonoBehaviour
   {
-    private  PlayerController _playerController;
-    public static event Action OnPickupItem;
+    private PlayerController _playerController;
+    
+    //TODO собрать отдельный серивс для управления объектами для управления подписками (типа обсервер) 
+    public static event Action OnInteract;
 
     public void Construct(PlayerController playerController)
     {
@@ -16,21 +18,24 @@ namespace Core
 
     private void Update()
     {
-      if ( _playerController != null )
+      if (_playerController != null)
       {
         float horizontal;
-        horizontal=Input.GetAxis("Horizontal");
+        horizontal = Input.GetAxis("Horizontal");
         Vector2 vec = new Vector2(horizontal, 0).normalized;
         _playerController.Move(vec);
 
         if (Input.GetKey(KeyCode.I))
         {
-         _playerController.ShowInventory(); 
+          _playerController.ShowInventory();
         }
+
         if (Input.GetKeyDown(KeyCode.E))
         {
-          OnPickupItem?.Invoke(); 
+          OnInteract.Invoke();
         }
+        //Это не кринж
+        //TODO можно переделать если надо 
       }
     }
   }
