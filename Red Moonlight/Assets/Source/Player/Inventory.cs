@@ -5,46 +5,30 @@ using UnityEngine;
 
 namespace Player
 {
-    [Serializable]
-    public class Inventory
+    public class Inventory : MonoBehaviour
     {
-        public List<ItemSO> items = new List<ItemSO>();
+    private List<ItemSO> items = new List<ItemSO>();
 
-        public void AddItem(ItemSO itemSo)
+    public void AddItem(ItemSO item)
+    {
+        items.Add(item);
+        Debug.Log("Добавлен предмет в инвентарь: " + item.itemName);
+    }
+
+    public void ShowInventory()
+    {
+        if (items.Count == 0)
         {
-            items.Add(itemSo);
-            Debug.Log("Добавлен предмет: " + itemSo.itemName);
+            Debug.Log("Инвентарь пуст.");
         }
-
-        public void RemoveItem(int itemID)
+        else
         {
-            ItemSO itemToUse = items.Find(item => item.id == itemID);
-            if (itemToUse != null)
+            Debug.Log("Содержимое инвентаря:");
+            foreach (var item in items)
             {
-                Debug.Log("Используется предмет: " + itemToUse.itemName);
-                items.Remove(itemToUse);
-                Debug.Log("Предмет убран из инвентаря. Осталось предметов: " + items.Count);
-            }
-            else
-            {
-                Debug.Log("Предмет с ID " + itemID + " не найден в инвентаре.");
-            }
-        }
-
-        public void ShowInventory()
-        {
-            if (items.Count == 0)
-            {
-                Debug.Log("Инвентарь пуст.");
-            }
-            else
-            {
-                Debug.Log("Содержимое инвентаря:");
-                foreach (var item in items)
-                {
-                    Debug.Log(" - " + item.itemName + " (ID: " + item.id + ")");
-                }
+                Debug.Log(" - " + item.itemName + " (ID: " + item.id + ")");
             }
         }
+    }
     }
 }
