@@ -10,7 +10,14 @@ namespace NPC
         [FormerlySerializedAs("Npcso")]
         public NPCSO NpcSO;
         private bool _isInRange; 
-        private int _currentDialogueIndex = 0; 
+        private int _currentDialogueIndex = 0;
+        private int _currentSetIndex = 0;
+        private QuestLog _playerNotebook;
+
+        private void Start()
+        {
+            _playerNotebook = FindObjectOfType<QuestLog>(); // Находим блокнот игрока
+        }
 
         private void OnTriggerEnter2D(Collider2D other)
         {
@@ -40,20 +47,62 @@ namespace NPC
             }
         }
 
-        private void ContinueDialogue()
+        public void ContinueDialogue()
         {
-            if (_currentDialogueIndex < NpcSO.Dialogs.Count)
+            if (NpcSO.DialogueSets == null || NpcSO.DialogueSets.Count == 0)
             {
-                string currentDialogue = NpcSO.Dialogs[_currentDialogueIndex];
-                Debug.Log($"{NpcSO.NPCName}: {currentDialogue}");
+                Debug.Log($"{NpcSO.NPCName}: Нет доступных наборов диалогов.");
+                return;
+            }
+
+            if (_currentSetIndex < NpcSO.DialogueSets.Count)
+            {
+                UseCurrentDialogueSet();
+            }
+            else
+            {
+                Debug.Log($"{NpcSO.NPCName}: Все наборы диалогов исчерпаны.");
+            }
+        }
+        
+        private void UseCurrentDialogueSet()
+        {
+            var currentDialogSet = NpcSO.DialogueSets[_currentSetIndex];
+
+            if (_currentDialogueIndex < currentDialogSet.Dialogs.Count)
+            {
+                var currentDialogue = currentDialogSet.Dialogs[_currentDialogueIndex];
+                Debug.Log($"{NpcSO.NPCName}: {currentDialogue.dialogueContent}");
+                
+                if (currentDialogue.givesQuest)
+                {
+                    AssignQuest();
+                }
 
                 _currentDialogueIndex++; 
             }
             else
             {
-                Debug.Log($"{NpcSO.NPCName}: Разговор завершен.");
+                Debug.Log($"{NpcSO.NPCName}: Разговор с набором {_currentSetIndex + 1} завершен.");
+                _currentSetIndex++; 
                 _currentDialogueIndex = 0; 
             }
         }
+
+        private void AssignQuest()
+        {
+            if (_currentSetIndex < NpcSO.QuestSo.Count)
+            {
+                var questToAssign = NpcSO.QuestSo[_currentSetIndex];
+                _playerNotebook.AddQuest(questToAssign);
+                Debug.Log($"Квест добавлен: {questToAssign.questName}");
+                _currentDialogueIndex++; 
+            }
+            else
+            {
+                Debug.Log($"{NpcSO.NPCName}: Нет доступных квестов для этого набора диалогов.");
+            }
+        }
+        
     }
 }

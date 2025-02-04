@@ -9,10 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f0b29e4d774b0e46a53fa8460bc813e, type: 3}
-  m_Name: NewItem
+  m_Script: {fileID: 11500000, guid: 4c8bc0e6d16cb864391163ab17608dbd, type: 3}
+  m_Name: New NPC Dialogue
   m_EditorClassIdentifier: 
-  itemName: 111
-  description: 123
-  icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  id: 1
+  npcData: {fileID: 11400000, guid: 16ca3144f9b42184bb95c117fc61ceac, type: 2}
+  dialogues:
+  - "\u041F\u0440\u0438\u0432\u0435\u0442"
+  - "\u0428\u0430\u043B\u043E\u043C"
