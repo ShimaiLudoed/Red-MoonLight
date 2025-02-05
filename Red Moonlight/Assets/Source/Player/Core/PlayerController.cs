@@ -1,5 +1,3 @@
-using Core;
-using System.Numerics;
 using Vector2 = UnityEngine.Vector2;
 
 namespace Player
@@ -7,14 +5,12 @@ namespace Player
     public class PlayerController
     {
         private readonly PlayerView _playerView;
-        private readonly TriggerDetector _triggerDetector;
         private readonly PlayerModel _playerModel;
         private readonly Inventory _inventory;
 
-        public PlayerController(PlayerModel playerModel, PlayerView playerView /*TriggerDetector triggerDetector*/, Inventory inventory)
+        public PlayerController(PlayerModel playerModel, PlayerView playerView, Inventory inventory)
         {
             _playerView = playerView;
-           // _triggerDetector = triggerDetector;
             _playerModel = playerModel;
             _inventory = inventory;
         }
