@@ -6,9 +6,10 @@ using Utils;
 
 public class Teleport : MonoBehaviour
 {
-    [SerializeField] private Transform teleportLocation; // Место, кудаTeleport должно телепортировать игрока
+    [SerializeField] private Transform teleportLocation;
     [SerializeField] private LayerMask playerLayer;
     [SerializeField] private Transform playerTransform;
+    [SerializeField] private Transform cameraPlayer;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -20,6 +21,7 @@ public class Teleport : MonoBehaviour
 
     private void TeleportToPoint()
     {
+        cameraPlayer.position = teleportLocation.position;
         playerTransform.position = teleportLocation.position;
         InputListener.OnInteract -= TeleportToPoint;
     }

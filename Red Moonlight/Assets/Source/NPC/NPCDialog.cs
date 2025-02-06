@@ -1,8 +1,8 @@
 using Core;
 using Data;
-using Player;
 using UnityEngine;
 using Utils;
+using TMPro;
 
 namespace NPC
 {
@@ -15,6 +15,14 @@ namespace NPC
         private int _currentDialogueIndex = 0;
         private int _currentSetIndex = 0;
         [SerializeField] private QuestLog _playerNotebook;
+        [SerializeField] private GameObject dialoguePanel; 
+        [SerializeField] private TMP_Text dialogueText;    
+        
+        
+        private void Start()
+        {
+            dialoguePanel.SetActive(false);
+        }
         
         private void OnTriggerEnter2D(Collider2D other)
         {
@@ -33,6 +41,7 @@ namespace NPC
                 InputListener.OnInteract -= HandleInteract;
                 _isInRange = false;
                 _currentDialogueIndex = 0;
+                dialoguePanel.SetActive(false);
             }
         }
 
@@ -48,17 +57,20 @@ namespace NPC
         {
             if (NpcSO.DialogueSets == null || NpcSO.DialogueSets.Count == 0)
             {
+                dialoguePanel.SetActive(false); 
                 Debug.Log($"{NpcSO.NPCName}: Нет доступных наборов диалогов.");
                 return;
             }
 
             if (_currentSetIndex < NpcSO.DialogueSets.Count)
             {
+                dialoguePanel.SetActive(true);
                 UseCurrentDialogueSet();
             }
             else
             {
                 Debug.Log($"{NpcSO.NPCName}: Все наборы диалогов исчерпаны.");
+                dialoguePanel.SetActive(false); 
             }
         }
 
@@ -69,6 +81,7 @@ namespace NPC
             if (_currentDialogueIndex < currentDialogSet.Dialogs.Count)
             {
                 var currentDialogue = currentDialogSet.Dialogs[_currentDialogueIndex];
+                dialogueText.text = $"{NpcSO.NPCName}: {currentDialogue.DialogueContent}";
                 Debug.Log($"{NpcSO.NPCName}: {currentDialogue.DialogueContent}");
 
                 if (currentDialogue.GivesQuest)
@@ -80,6 +93,7 @@ namespace NPC
             }
             else
             {
+                dialoguePanel.SetActive(false); 
                 Debug.Log($"{NpcSO.NPCName}: Разговор с набором {_currentSetIndex + 1} завершен.");
                 _currentSetIndex++;
                 _currentDialogueIndex = 0;
