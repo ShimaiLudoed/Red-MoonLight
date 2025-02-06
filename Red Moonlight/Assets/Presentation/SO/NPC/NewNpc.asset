@@ -9,8 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c8bc0e6d16cb864391163ab17608dbd, type: 3}
-  m_Name: New NPC Dialogue 3
+  m_Script: {fileID: 11500000, guid: d463390c2d3337f448e7b040019c3bdb, type: 3}
+  m_Name: NewNpc
   m_EditorClassIdentifier: 
-  <DialogueContent>k__BackingField: "\u043B\u043E\u0448\u043A\u0430"
-  <GivesQuest>k__BackingField: 1
+  <NPCName>k__BackingField: 
+  DialogueSets: []
+  <Image>k__BackingField: {fileID: 0}
+  <QuestSo>k__BackingField: []
