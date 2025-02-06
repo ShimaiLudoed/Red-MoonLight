@@ -10,9 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d463390c2d3337f448e7b040019c3bdb, type: 3}
-  m_Name: NewNpc
+  m_Name: NewNpc Charles
   m_EditorClassIdentifier: 
-  <NPCName>k__BackingField: 
-  DialogueSets: []
-  <Image>k__BackingField: {fileID: 0}
+  <NPCName>k__BackingField: "\u0427\u0430\u0440\u043B\u044C\u0437"
+  DialogueSets:
+  - {fileID: 11400000, guid: 5b9e29517efbe014db71f27828a18219, type: 2}
+  <Image>k__BackingField: {fileID: 21300000, guid: 99a0a41407a86a2409a19fc0bfc9ce64, type: 3}
   <QuestSo>k__BackingField: []
