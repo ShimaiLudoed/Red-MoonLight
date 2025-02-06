@@ -82,9 +82,9 @@ namespace Player
             }
 
             if (questDetailsImage != null)
-            {
-                questDetailsImage.gameObject.SetActive(false); 
-                questDetailsImage.sprite = null; 
+            { 
+                //questDetailsImage.gameObject.SetActive(false); 
+               // questDetailsImage.sprite = null; 
             }
         }
     }

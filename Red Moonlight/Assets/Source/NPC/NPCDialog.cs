@@ -81,7 +81,7 @@ namespace NPC
             if (_currentDialogueIndex < currentDialogSet.Dialogs.Count)
             {
                 var currentDialogue = currentDialogSet.Dialogs[_currentDialogueIndex];
-                dialogueText.text = $"{NpcSO.NPCName}: {currentDialogue.DialogueContent}";
+                dialogueText.text = $"{currentDialogue.DialogueContent}";
                 Debug.Log($"{NpcSO.NPCName}: {currentDialogue.DialogueContent}");
 
                 if (currentDialogue.GivesQuest)

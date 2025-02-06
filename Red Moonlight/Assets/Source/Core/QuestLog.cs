@@ -6,7 +6,7 @@ namespace Core
 {
     public class QuestLog : MonoBehaviour
     {
-        private List<QuestSO> quests = new List<QuestSO>();
+       [SerializeField] private List<QuestSO> quests = new List<QuestSO>();
 
         public void AddQuest(QuestSO quest)
         {
