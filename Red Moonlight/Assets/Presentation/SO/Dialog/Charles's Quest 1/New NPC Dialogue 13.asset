@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c8bc0e6d16cb864391163ab17608dbd, type: 3}
   m_Name: New NPC Dialogue 13
   m_EditorClassIdentifier: 
-  <DialogueContent>k__BackingField: "\u042F \u043D\u0435 \u0442\u0430\u043A\u043E\u0439,
-    \u043A\u0430\u043A \u043E\u043D\u0438"
+  <DialogueContent>k__BackingField: "\u0427\u0430\u0440\u043B\u044C\u0437: \u042F
+    \u043D\u0435 \u0442\u0430\u043A\u043E\u0439, \u043A\u0430\u043A \u043E\u043D\u0438"
   <GivesQuest>k__BackingField: 0

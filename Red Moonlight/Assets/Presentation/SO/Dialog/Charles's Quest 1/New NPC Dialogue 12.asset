@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c8bc0e6d16cb864391163ab17608dbd, type: 3}
   m_Name: New NPC Dialogue 12
   m_EditorClassIdentifier: 
-  <DialogueContent>k__BackingField: "\u0414\u0435\u0439\u0441\u0442\u0432\u0438\u0442\u0435\u043B\u044C\u043D\u043E?
+  <DialogueContent>k__BackingField: "\u0411\u0435\u0440\u0442\u043E\u043B\u044C\u0434:
+    \u0414\u0435\u0439\u0441\u0442\u0432\u0438\u0442\u0435\u043B\u044C\u043D\u043E?
     \u0422\u0435\u043F\u0435\u0440\u044C \u0442\u044B \u0433\u043E\u0442\u043E\u0432
     \u0440\u0430\u0437\u0433\u043E\u0432\u0430\u0440\u0438\u0432\u0430\u0442\u044C?
     *"

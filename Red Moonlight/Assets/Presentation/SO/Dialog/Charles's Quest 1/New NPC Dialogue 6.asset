@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c8bc0e6d16cb864391163ab17608dbd, type: 3}
   m_Name: New NPC Dialogue 6
   m_EditorClassIdentifier: 
-  <DialogueContent>k__BackingField: "\u2026 *"
+  <DialogueContent>k__BackingField: "\u0411\u0435\u0440\u0442\u043E\u043B\u044C\u0434:
+    \u2026 "
   <GivesQuest>k__BackingField: 0
