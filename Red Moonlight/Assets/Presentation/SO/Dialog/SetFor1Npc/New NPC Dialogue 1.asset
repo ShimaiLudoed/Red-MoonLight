@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4c8bc0e6d16cb864391163ab17608dbd, type: 3}
-  m_Name: New NPC Dialogue 3
+  m_Name: New NPC Dialogue 1
   m_EditorClassIdentifier: 
-  <DialogueContent>k__BackingField: 
-  <GivesQuest>k__BackingField: 0
+  <DialogueContent>k__BackingField: "\u041C\u0430\u0448\u043A\u0430"
+  <GivesQuest>k__BackingField: 1

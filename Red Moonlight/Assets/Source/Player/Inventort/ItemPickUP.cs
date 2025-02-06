@@ -8,9 +8,10 @@ namespace Player
   public class ItemPickUP : MonoBehaviour
   {
     [SerializeField] private LayerMask player;
-    [SerializeField] private ItemSO item; 
+    [SerializeField] private ItemSO item;
     [SerializeField] private Inventory inventory;
-    private bool _isInRange; 
+    [SerializeField] private QuestSO quest;
+    private bool _isInRange;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -18,17 +19,17 @@ namespace Player
       if (LayerMaskCheck.ContainsLayer(player, other.gameObject.layer))
       {
         InputListener.OnInteract += PickUP;
-        _isInRange = true; 
+        _isInRange = true;
         Debug.Log("Нажмите E, чтобы подобрать предмет: " + item.ItemName);
       }
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-      if (other.CompareTag("Player"))
+      if (LayerMaskCheck.ContainsLayer(player, other.gameObject.layer))
       {
         InputListener.OnInteract -= PickUP;
-        _isInRange = false; 
+        _isInRange = false;
       }
     }
 
@@ -38,10 +39,17 @@ namespace Player
       {
         if (inventory != null)
         {
-          inventory.AddItem(item); 
-          Destroy(gameObject); 
+          inventory.AddItem(item);
+          if (quest != null && quest.RequiredItem == item)
+          {
+            quest.CollectItem();
+          }
+
+          InputListener.OnInteract -= PickUP;
+          Destroy(gameObject);
         }
-      }  
+
+      }
     }
   }
 }

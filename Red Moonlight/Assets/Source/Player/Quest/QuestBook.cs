@@ -1,33 +1,90 @@
 using Core;
-using Player;
+using Data;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 namespace Player
 {
     public class QuestBook : MonoBehaviour
     {
-        [SerializeField] private QuestLog playerNotebook;
+        [SerializeField] private QuestLog questLog;
+        [SerializeField] private GameObject questPanel;
+        [SerializeField] private Button questButtonPrefab;
+        [SerializeField] private Transform questListContainer;
+        [SerializeField] private TMP_Text questDetailsText;
+        [SerializeField] private Image questDetailsImage;
 
-        private void Update()
+        private bool _isQuestPanelOpen = false;
+
+        void Update()
         {
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                DisplayQuests();
+                ToggleQuestPanel();
             }
         }
 
-        private void DisplayQuests()
+        public void ToggleQuestPanel()
         {
-            if (playerNotebook.GetQuests().Count == 0)
+            _isQuestPanelOpen = !_isQuestPanelOpen;
+            questPanel.SetActive(_isQuestPanelOpen);
+
+            if (_isQuestPanelOpen)
             {
-                Debug.Log("У вас нет квестов.");
-                return;
+                DisplayQuests();
+            }
+            else
+            {
+                ClearQuestList();
+            }
+        }
+
+        void DisplayQuests()
+        {
+            ClearQuestList();
+
+            foreach (var quest in questLog.GetQuests())
+            {
+                Button questButton = Instantiate(questButtonPrefab, questListContainer);
+                questButton.GetComponentInChildren<TMP_Text>().text = quest.QuestName;
+                TMP_Text objectiveText = questButton.transform.Find("QuestObjectiveText").GetComponent<TMP_Text>();
+                if (objectiveText != null)
+                {
+                    objectiveText.text = $"Цель: {quest.Objective}";
+                }
+
+             
+                questButton.onClick.AddListener(() => ShowQuestDetails(quest));
+            }
+        }
+
+        void ShowQuestDetails(QuestSO quest)
+        {
+           
+            questDetailsText.text = $"Название: {quest.QuestName}\nОписание: {quest.Description}";
+            if (quest.QuestGiver.Image != null && questDetailsImage != null)
+            {
+                questDetailsImage.sprite = quest.QuestGiver.Image;
+                questDetailsImage.gameObject.SetActive(true);
+            }
+            else
+            {
+                questDetailsImage.gameObject.SetActive(false);
+            }
+        }
+
+        void ClearQuestList()
+        {
+            foreach (Transform child in questListContainer)
+            {
+                Destroy(child.gameObject);
             }
 
-            Debug.Log("Список ваших квестов:");
-            foreach (var quest in playerNotebook.GetQuests())
+            if (questDetailsImage != null)
             {
-                Debug.Log($"{quest.QuestName}: {quest.Description} - Завершен: {quest.IsCompleted} выдан: {quest.QuestGiver.NPCName}");
+                questDetailsImage.gameObject.SetActive(false); 
+                questDetailsImage.sprite = null; 
             }
         }
     }

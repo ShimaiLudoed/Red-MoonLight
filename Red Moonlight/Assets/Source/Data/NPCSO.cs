@@ -1,6 +1,7 @@
 using JetBrains.Annotations;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Data
 {
@@ -10,7 +11,7 @@ namespace Data
         //TODO СДЕЛАТЬ ДРУГИЕ ИНДЕКСЫ
         [field: SerializeField] public string NPCName { get; private set; }
         [field: SerializeField] public List<DialogSetSO> DialogueSets;
-        [field: SerializeField] public Sprite Sprite { get; private set; }
+        [field: SerializeField] public Sprite Image { get; private set; }
         [field: SerializeField] [ItemCanBeNull] public List<QuestSO> QuestSo { get; private set; }
     }
 }
