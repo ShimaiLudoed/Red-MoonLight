@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d463390c2d3337f448e7b040019c3bdb, type: 3}
   m_Name: npc2
   m_EditorClassIdentifier: 
-  <NPCName>k__BackingField: 
+  <NPCName>k__BackingField: Second
   DialogueSets:
   - {fileID: 11400000, guid: d53df110742b3124194707aa60d9ef87, type: 2}
   <Image>k__BackingField: {fileID: 0}

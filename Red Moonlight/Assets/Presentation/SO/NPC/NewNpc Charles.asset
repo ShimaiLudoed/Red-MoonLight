@@ -15,6 +15,7 @@ MonoBehaviour:
   <NPCName>k__BackingField: "\u0427\u0430\u0440\u043B\u044C\u0437"
   DialogueSets:
   - {fileID: 11400000, guid: 5b9e29517efbe014db71f27828a18219, type: 2}
+  - {fileID: 11400000, guid: b37b62dc42950ef4e8d16735071427e4, type: 2}
   <Image>k__BackingField: {fileID: 21300000, guid: 99a0a41407a86a2409a19fc0bfc9ce64, type: 3}
   <QuestSo>k__BackingField:
   - {fileID: 11400000, guid: 586cce7ef28a8024da0a14605c53260b, type: 2}

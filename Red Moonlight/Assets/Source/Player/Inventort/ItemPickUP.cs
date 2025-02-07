@@ -1,5 +1,6 @@
 using Core;
 using Data;
+using System;
 using UnityEngine;
 using Utils;
 
@@ -11,6 +12,7 @@ namespace Player
     [SerializeField] private ItemSO item;
     [SerializeField] private Inventory inventory;
     [SerializeField] private QuestSO quest;
+    public static event Action OnSetUp;
     private bool _isInRange;
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -42,7 +44,9 @@ namespace Player
           inventory.AddItem(item);
           if (quest != null && quest.RequiredItem == item)
           {
+            OnSetUp?.Invoke();
             quest.CollectItem();
+            quest.TryCompleteQuest();
           }
 
           InputListener.OnInteract -= PickUP;

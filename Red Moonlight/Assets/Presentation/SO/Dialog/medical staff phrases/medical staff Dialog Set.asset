@@ -12,4 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 014194c229394f41877015fe06352c27, type: 3}
   m_Name: medical staff Dialog Set
   m_EditorClassIdentifier: 
-  <Dialogs>k__BackingField: []
+  <Dialogs>k__BackingField:
+  - {fileID: 11400000, guid: c85c1e470e05634449e288c32aa407ba, type: 2}
+  - {fileID: 11400000, guid: 66bf6a95e4156df41b9d4de3abf96db9, type: 2}
+  - {fileID: 11400000, guid: 43edadaa21926ec4296e8a5f2e036f75, type: 2}
+  - {fileID: 11400000, guid: c17456898fa523d40a532895368c14ae, type: 2}
+  - {fileID: 11400000, guid: 45f2e1995342a4d41a4a37b5a1a558fe, type: 2}
+  - {fileID: 11400000, guid: f1ee95e68a5dbcc4f980a8517e12cb5b, type: 2}
+  - {fileID: 11400000, guid: 60bd6c6be115ecb46ad9c69a78e690a2, type: 2}
+  - {fileID: 11400000, guid: 29baf4a3efbc9c340bc6c9eb5e1d0e2a, type: 2}
+  - {fileID: 11400000, guid: b1e402c11e9f9fa4c8f8f8e566535f00, type: 2}
+  - {fileID: 11400000, guid: 8934c7d89c9ff1d44930c931a88c0c27, type: 2}
+  - {fileID: 11400000, guid: 4854356b4cce8574bb14900e2bd1c383, type: 2}

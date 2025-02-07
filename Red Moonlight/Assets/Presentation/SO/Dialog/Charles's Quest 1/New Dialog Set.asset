@@ -9,11 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d463390c2d3337f448e7b040019c3bdb, type: 3}
-  m_Name: medical staff
+  m_Script: {fileID: 11500000, guid: 014194c229394f41877015fe06352c27, type: 3}
+  m_Name: New Dialog Set
   m_EditorClassIdentifier: 
-  <NPCName>k__BackingField: Med
-  DialogueSets:
-  - {fileID: 11400000, guid: fcddf5f985aa56549841724af30269c7, type: 2}
-  <Image>k__BackingField: {fileID: 0}
-  <QuestSo>k__BackingField: []
+  <Dialogs>k__BackingField:
+  - {fileID: 11400000, guid: f7fee8d5190d8c941befebfe6534974c, type: 2}

@@ -62,7 +62,7 @@ namespace Player
         void ShowQuestDetails(QuestSO quest)
         {
            
-            questDetailsText.text = $"Название: {quest.QuestName}\nОписание: {quest.Description}";
+            questDetailsText.text = $" Название: {quest.QuestName}\nОписание: {quest.Description} состояние : {quest.IsCompleted}";
             if (quest.QuestGiver.Image != null && questDetailsImage != null)
             {
                 questDetailsImage.sprite = quest.QuestGiver.Image;

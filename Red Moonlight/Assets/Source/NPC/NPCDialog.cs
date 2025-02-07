@@ -9,21 +9,19 @@ namespace NPC
     public class NpcDialog : MonoBehaviour
     {
         [SerializeField] private LayerMask player;
-        //TODO внедрить call back
         [SerializeField] NPCSO NpcSO;
         private bool _isInRange;
         private int _currentDialogueIndex = 0;
         private int _currentSetIndex = 0;
         [SerializeField] private QuestLog _playerNotebook;
-        [SerializeField] private GameObject dialoguePanel; 
-        [SerializeField] private TMP_Text dialogueText;    
-        
-        
+        [SerializeField] private GameObject dialoguePanel;
+        [SerializeField] private TMP_Text dialogueText;
+
         private void Start()
         {
             dialoguePanel.SetActive(false);
         }
-        
+
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (LayerMaskCheck.ContainsLayer(player, other.gameObject.layer))
@@ -57,7 +55,7 @@ namespace NPC
         {
             if (NpcSO.DialogueSets == null || NpcSO.DialogueSets.Count == 0)
             {
-                dialoguePanel.SetActive(false); 
+                dialoguePanel.SetActive(false);
                 Debug.Log($"{NpcSO.NPCName}: Нет доступных наборов диалогов.");
                 return;
             }
@@ -70,7 +68,7 @@ namespace NPC
             else
             {
                 Debug.Log($"{NpcSO.NPCName}: Все наборы диалогов исчерпаны.");
-                dialoguePanel.SetActive(false); 
+                dialoguePanel.SetActive(false);
             }
         }
 
@@ -93,7 +91,7 @@ namespace NPC
             }
             else
             {
-                dialoguePanel.SetActive(false); 
+                dialoguePanel.SetActive(false);
                 Debug.Log($"{NpcSO.NPCName}: Разговор с набором {_currentSetIndex + 1} завершен.");
                 _currentSetIndex++;
                 _currentDialogueIndex = 0;

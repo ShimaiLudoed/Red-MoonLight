@@ -18,6 +18,13 @@ public class Teleport : MonoBehaviour
             InputListener.OnInteract += TeleportToPoint;
         }
     }
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (LayerMaskCheck.ContainsLayer(playerLayer, other.gameObject.layer))
+        {
+            InputListener.OnInteract -= TeleportToPoint;
+        }
+    }
 
     private void TeleportToPoint()
     {
