@@ -44,7 +44,7 @@ namespace Player
             foreach (var item in _items)
             {
                 Button itemButton = Instantiate(ItemButtonPrefab, ItemContainer);
-                itemButton.GetComponentInChildren<TMP_Text>().text = item.ItemName;
+                itemButton.GetComponentInChildren<TMP_Text>().text = item.ItemName; //TODO call Init(U data) from prefab component
                 Debug.Log(" - " + item.ItemName + " (ID: " + item.Id + ")");
 
                 itemButton.onClick.AddListener(() => ShowItemDetails(item));
