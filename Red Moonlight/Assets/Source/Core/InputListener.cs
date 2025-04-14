@@ -29,17 +29,15 @@ namespace Core
 
     private void Update()
     {
-
-      if (Input.GetKey(KeyCode.I))
+      if (Input.GetKeyDown(KeyCode.I))
       {
         _playerController.ShowInventory();
       }
 
       if (Input.GetKeyDown(KeyCode.E))
       {
-        OnInteract.Invoke();
+        OnInteract?.Invoke();
       }
-      //Это не кринж
       //TODO можно переделать если надо 
     }
   }
