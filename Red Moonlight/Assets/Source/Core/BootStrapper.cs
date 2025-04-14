@@ -6,7 +6,7 @@ namespace Core
 {
   public class BootStrapper : MonoBehaviour
   {
-    [SerializeField] private Inventory _inventory;
+    [SerializeField] private NormalInventory _inventory;
     private PlayerController _playerController;
     private PlayerModel _playerModel;
     [SerializeField] private InputListener inputListener;

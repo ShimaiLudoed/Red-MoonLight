@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using static UnityEditor.Progress;
 
 namespace Player
 {
@@ -10,7 +11,16 @@ namespace Player
     {
         public override void ShowDetails(ItemSO u)
         {
-            throw new System.NotImplementedException();
+            DetailsText.text = $" Название: {u.ItemName} \nОписание: {u.Description}";
+            if (u.Icon != null && DetailsImage != null)
+            {
+                DetailsImage.sprite = u.Icon;
+                DetailsImage.gameObject.SetActive(true);
+            }
+            else
+            {
+                DetailsImage.gameObject.SetActive(false);
+            }
         }
     }
 }

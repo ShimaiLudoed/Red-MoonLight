@@ -10,7 +10,7 @@ namespace Player
   {
     [SerializeField] private LayerMask player;
     [SerializeField] private ItemSO item;
-    [SerializeField] private Inventory inventory;
+    [SerializeField] private NormalInventory inventory;
     [SerializeField] private QuestSO quest;
     public static event Action OnSetUp;
     private bool _isInRange;

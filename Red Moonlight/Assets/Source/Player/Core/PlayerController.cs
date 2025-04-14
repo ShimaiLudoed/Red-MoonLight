@@ -6,9 +6,9 @@ namespace Player
     {
         private readonly PlayerView _playerView;
         private readonly PlayerModel _playerModel;
-        private readonly Inventory _inventory;
+        private readonly NormalInventory _inventory;
 
-        public PlayerController(PlayerModel playerModel, PlayerView playerView, Inventory inventory)
+        public PlayerController(PlayerModel playerModel, PlayerView playerView, NormalInventory inventory)
         {
             _playerView = playerView;
             _playerModel = playerModel;
@@ -22,7 +22,7 @@ namespace Player
 
         public void ShowInventory()
         {
-            _inventory.ShowInventory();
+            _inventory.Show();
         }
         
     }

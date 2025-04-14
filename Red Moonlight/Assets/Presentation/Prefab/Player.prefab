@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3932362300584414067}
   - component: {fileID: 7540143914662588716}
   - component: {fileID: 5047529122808398879}
+  - component: {fileID: 2604665222953507545}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -101,6 +102,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e24ec34174ee4174cb10557584514a48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventoryPanel: {fileID: 0}
+  ItemButtonPrefab: {fileID: 0}
+  ItemContainer: {fileID: 0}
+  ItemDetailsText: {fileID: 0}
+  ItemDetailsImage: {fileID: 0}
 --- !u!114 &8395632035510035002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -193,3 +199,20 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
+--- !u!114 &2604665222953507545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8030301306426939558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dd1f27d9d6ee9141bac793c346370aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _panel: {fileID: 0}
+  ButtonPrefab: {fileID: 0}
+  ItemContainer: {fileID: 0}
+  DetailsText: {fileID: 0}
+  DetailsImage: {fileID: 0}
