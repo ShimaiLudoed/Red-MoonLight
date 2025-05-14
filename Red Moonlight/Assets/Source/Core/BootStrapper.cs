@@ -6,6 +6,7 @@ namespace Core
 {
   public class BootStrapper : MonoBehaviour
   {
+    [SerializeField] private NormalQuestBook _questBook;
     [SerializeField] private NormalInventory _inventory;
     private PlayerController _playerController;
     private PlayerModel _playerModel;
@@ -18,7 +19,7 @@ namespace Core
     {
       playerView.Construct(speed);
       _playerModel = new PlayerModel(playerView.Speed);
-      _playerController = new PlayerController(_playerModel, playerView, _inventory);
+      _playerController = new PlayerController(_playerModel, playerView, _inventory, _questBook);
       inputListener.Construct(_playerController);
     }
   }

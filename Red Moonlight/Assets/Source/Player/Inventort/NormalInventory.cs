@@ -11,7 +11,7 @@ namespace Player
     {
         public override void ShowDetails(ItemSO u)
         {
-            DetailsText.text = $" Название: {u.ItemName} \nОписание: {u.Description}";
+            DetailsText.text = $" РќР°Р·РІР°РЅРёРµ: {u.ItemName} \nnРћРїРёСЃР°РЅРёРµ: {u.Description}";
             if (u.Icon != null && DetailsImage != null)
             {
                 DetailsImage.sprite = u.Icon;

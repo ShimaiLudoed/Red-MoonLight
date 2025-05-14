@@ -7,12 +7,14 @@ namespace Player
         private readonly PlayerView _playerView;
         private readonly PlayerModel _playerModel;
         private readonly NormalInventory _inventory;
+        private readonly NormalQuestBook _questBook;
 
-        public PlayerController(PlayerModel playerModel, PlayerView playerView, NormalInventory inventory)
+        public PlayerController(PlayerModel playerModel, PlayerView playerView, NormalInventory inventory, NormalQuestBook questBook)
         {
             _playerView = playerView;
             _playerModel = playerModel;
             _inventory = inventory;
+            _questBook = questBook;
         }
 
         public void Move(Vector2 direction)
@@ -24,6 +26,10 @@ namespace Player
         {
             _inventory.Show();
         }
-        
+
+        public void ShowQuestBook()
+        {
+            _questBook.Show();
+        }
     }
 }

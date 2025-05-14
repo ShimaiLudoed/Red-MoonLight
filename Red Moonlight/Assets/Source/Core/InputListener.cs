@@ -34,6 +34,11 @@ namespace Core
         _playerController.ShowInventory();
       }
 
+      if (Input.GetKeyDown(KeyCode.Q))
+      {
+        _playerController.ShowQuestBook();
+      }
+
       if (Input.GetKeyDown(KeyCode.E))
       {
         OnInteract?.Invoke();
