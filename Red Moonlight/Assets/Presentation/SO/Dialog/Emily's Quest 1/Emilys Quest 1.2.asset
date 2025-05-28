@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 014194c229394f41877015fe06352c27, type: 3}
+  m_Name: Emilys Quest 1.2
+  m_EditorClassIdentifier: 
+  <Dialogs>k__BackingField:
+  - {fileID: 11400000, guid: a249f9f9b8d096743960d7b9963c9b0f, type: 2}
+  - {fileID: 11400000, guid: c011f73fcca800a448e5ff8ea7783624, type: 2}
+  - {fileID: 11400000, guid: a7d32343fde6d8444a475987147f87a7, type: 2}
+  - {fileID: 11400000, guid: 0f7f50b4698f32743b68fbbeef907232, type: 2}
+  - {fileID: 11400000, guid: 9d58b7dde38f5a74d88db2a60fe83db3, type: 2}
+  - {fileID: 11400000, guid: f8bd93a8c102cc0489ae6a1bad1ee819, type: 2}
+  - {fileID: 11400000, guid: 0ec46583c31140c488345db6d25bc709, type: 2}
+  - {fileID: 11400000, guid: 689398c4d52572e468c5e23555c8e654, type: 2}
+  - {fileID: 11400000, guid: 43df17f8392594146893d839f0b4e350, type: 2}
+  - {fileID: 11400000, guid: 33ca752caa5a1df4592dd60d27921ea6, type: 2}
+  - {fileID: 11400000, guid: 09efc93ebb2852147920069c2709b5a8, type: 2}
+  - {fileID: 11400000, guid: e44d1079f6b523545ad07b9fef19f153, type: 2}
+  - {fileID: 11400000, guid: 4df12ab5a7290624fb49cae9b116fa65, type: 2}
+  - {fileID: 11400000, guid: 5418503a0ad5a7940ae4b8e5fd6e497f, type: 2}
+  - {fileID: 11400000, guid: 98fe563ab39b920458f859dbf389d3c1, type: 2}
+  - {fileID: 11400000, guid: 48dd2e3fe64c4cc45a6df9154c704649, type: 2}
+  - {fileID: 11400000, guid: ab410438e2b70f8419ff48e2bd1f1558, type: 2}
+  - {fileID: 11400000, guid: b70f6428641fbc04f93094c360ba4191, type: 2}
