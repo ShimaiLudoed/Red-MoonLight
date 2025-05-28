@@ -7,13 +7,11 @@ public class NoteManager : MonoBehaviour
 {
   [SerializeField] private GameObject notePrefab;
   [SerializeField] private float spawnInterval = 1f; 
-  [SerializeField] private float spawnRangeX = 4f;
-
+  [SerializeField] private Transform[] spawnPoints; 
   private void Start()
   {
     StartCoroutine(SpawnNotes());
   }
-
   private IEnumerator SpawnNotes()
   {
     while (true)
@@ -22,12 +20,11 @@ public class NoteManager : MonoBehaviour
       yield return new WaitForSeconds(spawnInterval);
     }
   }
-
   void SpawnNote()
   {
-    float spawnX = Random.Range(-spawnRangeX, spawnRangeX);
-    Vector3 spawnPosition = new Vector3(spawnX, 6, 0); 
-    GameObject note = Instantiate(notePrefab, spawnPosition, Quaternion.identity);
+    int randomIndex = Random.Range(0, spawnPoints.Length);
+    Transform spawnPosition = spawnPoints[randomIndex]; 
+    GameObject note = Instantiate(notePrefab, spawnPosition.transform.position, Quaternion.identity);
     note.transform.SetParent(transform, false);
   }
 }

@@ -1711,6 +1711,7 @@ MonoBehaviour:
   - {fileID: 3587161367027557793}
   - {fileID: 6023869731234317655}
   statusText: {fileID: 759323524746193642}
+  quest: {fileID: 0}
 --- !u!1 &4881646462264763542
 GameObject:
   m_ObjectHideFlags: 0

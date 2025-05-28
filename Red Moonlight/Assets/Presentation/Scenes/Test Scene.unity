@@ -122,6 +122,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!224 &113261677 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3741628201339746645, guid: d21e5311ad16b994d958bc8bdfdfcf49, type: 3}
+  m_PrefabInstance: {fileID: 7652984775852508304}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &265567154 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2767948492466780445, guid: 4cc978f71713b5944af4ab8b77b30a6f, type: 3}
@@ -136,6 +141,21 @@ RectTransform:
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5649251853254650583, guid: 96ef9b33eba0bc94eacf507b15eba109, type: 3}
   m_PrefabInstance: {fileID: 9173222735375388047}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &805790980 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5814659042527504274, guid: d21e5311ad16b994d958bc8bdfdfcf49, type: 3}
+  m_PrefabInstance: {fileID: 7652984775852508304}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &897968560 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2804599856566149100, guid: d21e5311ad16b994d958bc8bdfdfcf49, type: 3}
+  m_PrefabInstance: {fileID: 7652984775852508304}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &968091860 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1421001208609024383, guid: d21e5311ad16b994d958bc8bdfdfcf49, type: 3}
+  m_PrefabInstance: {fileID: 7652984775852508304}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1434663756
 GameObject:
@@ -701,6 +721,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6929037176283309446, guid: d21e5311ad16b994d958bc8bdfdfcf49, type: 3}
+      propertyPath: spawnPoints.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6929037176283309446, guid: d21e5311ad16b994d958bc8bdfdfcf49, type: 3}
+      propertyPath: spawnPoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 968091860}
+    - target: {fileID: 6929037176283309446, guid: d21e5311ad16b994d958bc8bdfdfcf49, type: 3}
+      propertyPath: spawnPoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 113261677}
+    - target: {fileID: 6929037176283309446, guid: d21e5311ad16b994d958bc8bdfdfcf49, type: 3}
+      propertyPath: spawnPoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 897968560}
+    - target: {fileID: 6929037176283309446, guid: d21e5311ad16b994d958bc8bdfdfcf49, type: 3}
+      propertyPath: spawnPoints.Array.data[3]
+      value: 
+      objectReference: {fileID: 805790980}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
