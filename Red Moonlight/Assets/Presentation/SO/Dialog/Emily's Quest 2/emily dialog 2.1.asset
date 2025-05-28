@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 014194c229394f41877015fe06352c27, type: 3}
+  m_Name: emily dialog 2.1
+  m_EditorClassIdentifier: 
+  <Dialogs>k__BackingField:
+  - {fileID: 11400000, guid: bbd0a52614768d548aed62e734623567, type: 2}
+  - {fileID: 11400000, guid: d55031b82c59e05439ffe35635dff1ea, type: 2}
+  - {fileID: 11400000, guid: 3081b9b5e8296614cb7f54fd3a0992ee, type: 2}
+  - {fileID: 11400000, guid: faca3c8191a74dd44b5052e4f59a6cbb, type: 2}
+  - {fileID: 11400000, guid: e5c9d62fc7d60f9488d21b7f4d15cade, type: 2}
+  - {fileID: 11400000, guid: 3cb4ede2133d1e24ba68d67a4b0411d5, type: 2}
+  - {fileID: 11400000, guid: e58a2735577f8ec4a9065ac21c1191a9, type: 2}
+  - {fileID: 11400000, guid: 22306254ce3d08e4d99149b9f1c8f1f6, type: 2}
+  - {fileID: 11400000, guid: ff0abb77331cb5e468c42cd70290f8be, type: 2}
+  - {fileID: 11400000, guid: d9beec0391bbf0740acd4b96d7a39012, type: 2}
+  - {fileID: 11400000, guid: 66dd2390fdecea846979c51cf5778d2a, type: 2}
+  - {fileID: 11400000, guid: 056342320ae42c04c822a097ae39e751, type: 2}
+  - {fileID: 11400000, guid: b56a5927abc24334b88e655b20090e1d, type: 2}

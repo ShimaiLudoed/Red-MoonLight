@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 014194c229394f41877015fe06352c27, type: 3}
+  m_Name: beatrice dialog 1.2
+  m_EditorClassIdentifier: 
+  <Dialogs>k__BackingField:
+  - {fileID: 11400000, guid: 614f973a0601fa4438f2a9d674b87c57, type: 2}
+  - {fileID: 11400000, guid: 93567943ebf5e7c48b65b6ef426bc1da, type: 2}
+  - {fileID: 11400000, guid: c1ee3e564b0b8134abec5463b915dd48, type: 2}
+  - {fileID: 11400000, guid: 5ea39fd4c4c7f0341aee64592d5c1ee1, type: 2}
+  - {fileID: 11400000, guid: 09504640ca3d9274bbe0d3b85a5eaa3f, type: 2}
+  - {fileID: 11400000, guid: 3b3f3c7e9cdc5da4284502940d013d02, type: 2}
+  - {fileID: 11400000, guid: 9dcbcbb3dd93a9b4181df07ecdec80e2, type: 2}
+  - {fileID: 11400000, guid: e15b91bca2363784ebbd0bbf3506cf4f, type: 2}
+  - {fileID: 11400000, guid: 348063e7a17b25545ae7e86860461ae4, type: 2}
+  - {fileID: 11400000, guid: bab7b5cf6a2a55e45b25c02b416eb94a, type: 2}
+  - {fileID: 11400000, guid: be8af1aaff9a5f0488104f047771ded7, type: 2}
+  - {fileID: 11400000, guid: d237fb9bf083e62468305839feaf1d9b, type: 2}
