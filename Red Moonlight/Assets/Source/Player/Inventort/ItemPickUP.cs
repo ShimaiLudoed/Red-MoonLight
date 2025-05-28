@@ -17,7 +17,6 @@ namespace Player
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-      //TODO Сделать по слою
       if (LayerMaskCheck.ContainsLayer(player, other.gameObject.layer))
       {
         InputListener.OnInteract += PickUP;

@@ -1,6 +1,7 @@
 using Data;
 using UnityEngine;
-
+using JetBrains.Annotations;
+using System;
 
 namespace Data
 {
@@ -13,7 +14,8 @@ namespace Data
     [field: SerializeField] public NPCSO QuestGiver { get; private set; }
     [field: SerializeField] public bool IsCompleted { get; private set; }
     [field: SerializeField] private bool _isItemCollected = false;
-    [field: SerializeField] public ItemSO RequiredItem { get; private set; }
+    [field: SerializeField] [ItemCanBeNull] public ItemSO RequiredItem { get; private set; }
+    public static event Action OnQuest;
 
     public void CollectItem()
     {
@@ -32,6 +34,7 @@ namespace Data
     public void CompleteQuest()
     {
       IsCompleted = true;
+      OnQuest?.Invoke();
       Debug.Log($"Квест {QuestName} завершен!");
     }
   }

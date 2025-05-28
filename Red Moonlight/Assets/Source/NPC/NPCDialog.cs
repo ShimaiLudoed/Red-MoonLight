@@ -13,12 +13,14 @@ namespace NPC
         private bool _isInRange;
         private int _currentDialogueIndex = 0;
         private int _currentSetIndex = 0;
+        private QuestSO _currentQuest;
         [SerializeField] private QuestLog _playerNotebook;
         [SerializeField] private GameObject dialoguePanel;
         [SerializeField] private TMP_Text dialogueText;
 
         private void Start()
         {
+
             dialoguePanel.SetActive(false);
         }
 
@@ -62,11 +64,15 @@ namespace NPC
 
             if (_currentSetIndex < NpcSO.DialogueSets.Count)
             {
-                dialoguePanel.SetActive(true);
-                UseCurrentDialogueSet();
+                if (_currentQuest == null)
+                {
+                    dialoguePanel.SetActive(true);
+                    UseCurrentDialogueSet();
+                }
             }
             else
             {
+                Debug.Log("сработал я ");
                 Debug.Log($"{NpcSO.NPCName}: Все наборы диалогов исчерпаны.");
                 dialoguePanel.SetActive(false);
             }
@@ -80,13 +86,14 @@ namespace NPC
             {
                 var currentDialogue = currentDialogSet.Dialogs[_currentDialogueIndex];
                 dialogueText.text = $"{currentDialogue.DialogueContent}";
-                Debug.Log($"{NpcSO.NPCName}: {currentDialogue.DialogueContent}");
 
                 if (currentDialogue.GivesQuest)
                 {
                     AssignQuest();
+                    Debug.Log($"{NpcSO.NPCName}: Разговор с набором {_currentSetIndex + 1} завершен.");
+                    _currentSetIndex++;
+                    _currentDialogueIndex = 0;
                 }
-
                 _currentDialogueIndex++;
             }
             else
@@ -104,13 +111,21 @@ namespace NPC
             {
                 var questToAssign = NpcSO.QuestSo[_currentSetIndex];
                 _playerNotebook.AddQuest(questToAssign);
+                _currentQuest = questToAssign;
                 Debug.Log($"Квест добавлен: {questToAssign.QuestName}");
                 _currentDialogueIndex++;
+                QuestSO.OnQuest += Complete;
             }
             else
             {
                 Debug.Log($"{NpcSO.NPCName}: Нет доступных квестов для этого набора диалогов.");
+                QuestSO.OnQuest -= Complete;
             }
+        }
+        private void Complete()
+        {
+            _currentQuest = null;
+            Debug.Log(_currentQuest);
         }
     }
 }
