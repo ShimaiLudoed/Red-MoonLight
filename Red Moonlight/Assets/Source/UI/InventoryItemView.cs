@@ -1,6 +1,7 @@
 using Data;
 using System;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +12,8 @@ public class InventoryItemView : ItemView<ItemSO>
     public override void Init(ItemSO data, Action callback = null)
     {
         _itemName.text = data.ItemName; //TODO call Init(U data) from prefab component
-
+        _itemButton.image.sprite = data.Icon;
+        
         if (callback != null)
             _itemButton.onClick.AddListener(() => callback.Invoke());
     }

@@ -11,7 +11,9 @@ namespace Data
         //TODO СДЕЛАТЬ ДРУГИЕ ИНДЕКСЫ
         [field: SerializeField] public string NPCName { get; private set; }
         [field: SerializeField] public List<DialogSetSO> DialogueSets;
+        [field: SerializeField] public Sprite ImageForBook;
         [field: SerializeField] public Sprite Image { get; private set; }
+        [field: SerializeField] public string NPCDetails;
         [field: SerializeField] [ItemCanBeNull] public List<QuestSO> QuestSo { get; private set; }
     }
 }

@@ -14,9 +14,11 @@ namespace NPC
         private int _currentDialogueIndex = 0;
         private int _currentSetIndex = 0;
         private QuestSO _currentQuest;
-        [SerializeField] private QuestLog _playerNotebook;
+        [SerializeField] private NormanPersonView personView;
+        [SerializeField] private QuestLog playerNotebook;
         [SerializeField] private GameObject dialoguePanel;
         [SerializeField] private TMP_Text dialogueText;
+        private bool _isFirst = true;
 
         private void Start()
         {
@@ -61,7 +63,11 @@ namespace NPC
                 Debug.Log($"{NpcSO.NPCName}: Нет доступных наборов диалогов.");
                 return;
             }
-
+            if (_isFirst==true)
+            {
+                personView.AddItem(NpcSO);
+                _isFirst = false;
+            }
             if (_currentSetIndex < NpcSO.DialogueSets.Count)
             {
                 if (_currentQuest == null)
@@ -110,7 +116,7 @@ namespace NPC
             if (_currentSetIndex < NpcSO.QuestSo.Count)
             {
                 var questToAssign = NpcSO.QuestSo[_currentSetIndex];
-                _playerNotebook.AddQuest(questToAssign);
+                playerNotebook.AddQuest(questToAssign);
                 _currentQuest = questToAssign;
                 Debug.Log($"Квест добавлен: {questToAssign.QuestName}");
                 _currentDialogueIndex++;

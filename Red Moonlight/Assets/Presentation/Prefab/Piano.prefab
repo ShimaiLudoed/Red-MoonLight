@@ -1545,8 +1545,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notePrefab: {fileID: 6659932752294686058, guid: 0abb10ee6e9ff3044949701e4ea47bfe, type: 3}
-  spawnInterval: 1
-  spawnPoints: []
+  spawnInterval: 0.8
+  spawnPoints:
+  - {fileID: 1421001208609024383}
+  - {fileID: 3741628201339746645}
+  - {fileID: 2804599856566149100}
+  - {fileID: 5814659042527504274}
 --- !u!1 &4897357345280954381
 GameObject:
   m_ObjectHideFlags: 0

@@ -8,7 +8,7 @@ public class NoteGameManager : MonoBehaviour
 {
     [SerializeField] private TMP_Text scoreText; 
     private int _score = 0;
-    private int _winScore;
+    [SerializeField] private int _winScore;
     [SerializeField] private QuestSO quest;
     void Start()
     {

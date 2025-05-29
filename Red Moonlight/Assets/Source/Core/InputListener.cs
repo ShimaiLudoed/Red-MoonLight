@@ -7,8 +7,7 @@ namespace Core
   public class InputListener : MonoBehaviour
   {
     private PlayerController _playerController;
-
-    //TODO собрать отдельный серивс для управления объектами для управления подписками (типа обсервер) 
+    
     public static event Action OnInteract;
 
     public void Construct(PlayerController playerController)
@@ -39,6 +38,10 @@ namespace Core
         _playerController.ShowQuestBook();
       }
 
+      if (Input.GetKeyDown(KeyCode.R))
+      {
+        _playerController.ShowPersonView();
+      }
       if (Input.GetKeyDown(KeyCode.E))
       {
         OnInteract?.Invoke();

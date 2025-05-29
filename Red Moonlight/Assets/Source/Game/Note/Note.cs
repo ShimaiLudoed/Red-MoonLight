@@ -5,47 +5,44 @@ using UnityEngine;
 
 public class Note : MonoBehaviour
 {
-    public float fallSpeed = 5f; // Скорость падения
-    private ButtonHander buttonHandler; // Ссылка на обработчик кнопок
-    public bool isActive = false;
+    [SerializeField] private float fallSpeed = 20f; 
+    private ButtonHander _buttonHandler; 
+    public bool IsActive = false;
     void Update()
     {
-        // Перемещение вниз по экрану
         transform.Translate(Vector2.down * fallSpeed * Time.deltaTime);
-        // Уничтожаем ноту, если она вышла за пределы
         if (transform.position.y < -6)
         {
-            Destroy(gameObject); // Удаляем ноту
+            Destroy(gameObject); 
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // Проверяем, если нота попадает на кнопку
+
         if (collision.gameObject.CompareTag("PlayerKey"))
         {
-            buttonHandler = collision.GetComponent<ButtonHander>(); // Получаем ссылку на ButtonHandler
-            if (buttonHandler != null)
+            _buttonHandler = collision.GetComponent<ButtonHander>(); 
+            if (_buttonHandler != null)
             {
-                buttonHandler.note = this; // Устанавливаем связь с нотой
-                Activate(); // Активируем ноту
+                _buttonHandler.note = this; 
+                Activate(); 
             }
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        // Нота выходит за пределы кнопки
         if (collision.gameObject.CompareTag("PlayerKey"))
         {
-            Deactivate(); // Деактивируем ноту
-            buttonHandler.note = null; // Убираем ссылку из ButtonHandler
+            Deactivate(); 
+            _buttonHandler.note = null; 
         }
     }
     public void Activate()
     {
-        isActive = true; // Устанавливаем активное состояние
+        IsActive = true; 
     }
     public void Deactivate()
     {
-        isActive = false; // Устанавливаем неактивное состояние
+        IsActive = false;
     }
 }

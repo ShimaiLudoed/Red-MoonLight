@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ButtonHander : MonoBehaviour
 {
-    public Note note; // Ссылка на ноту, ассоциированную с кнопкой
+    public Note note; 
     private NoteGameManager gameManager;
     void Start()
     {
@@ -12,11 +12,11 @@ public class ButtonHander : MonoBehaviour
     }
     public void OnButtonClick()
     {
-        if (note != null && note.isActive) // Проверяем активность ноты
+        if (note != null && note.IsActive) 
         {
-            gameManager.AddScore(); // Увеличиваем счёт
-            Destroy(note.gameObject); // Удаляем ноту при нажатии на кнопку
-            note = null; // Удаляем ссылку на ноту
+            gameManager.AddScore(); 
+            Destroy(note.gameObject); 
+            note = null; 
         }
     }
 }
