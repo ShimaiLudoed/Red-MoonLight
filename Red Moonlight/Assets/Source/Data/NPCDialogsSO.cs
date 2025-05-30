@@ -8,5 +8,7 @@ namespace Data
     [field: SerializeField] public string DialogueContent { get; private set; }
     [field: SerializeField] public bool GivesQuest { get; private set; }
     [field: SerializeField] public bool OpenGame { get; private set; }
-  }
+
+       [field: SerializeField] public bool CutScene { get; private set; }
+    }
 }
