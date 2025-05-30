@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Progress;
 
 namespace Player
 {
@@ -14,7 +13,7 @@ namespace Player
         [SerializeField] private QuestLog questLog;
         public override void ShowDetails(QuestSO u)
         {
-            DetailsText.text = $" Название: {u.QuestName}\nОписание: {u.Description} состояние : {u.IsCompleted}";
+            DetailsText.text = $" Название: {u.QuestName}\nОписание: {u.Description}";
             if (u.QuestGiver.Image != null && DetailsImage != null)
             {
                 DetailsImage.sprite = u.QuestGiver.Image;
@@ -29,18 +28,21 @@ namespace Player
         public override void DisplayItems()
         {
             ClearItemList();
-
-            foreach (var quest in questLog.GetQuests())
+            for (int i = 0; i < questLog.GetQuests().Count; i++)
             {
-                QuestView questButton = Instantiate(ButtonPrefab, ItemContainer);
-                questButton.GetComponentInChildren<TMP_Text>().text = quest.QuestName;
-                TMP_Text objectiveText = questButton.transform.Find("QuestObjectiveText").GetComponent<TMP_Text>();
-                var currItem = quest;
-                if (objectiveText != null)
+                if (questLog.GetQuests()[i].IsCompleted != true)
                 {
-                    objectiveText.text = $"Цель: {quest.Objective}";
+                    QuestView questButton = Instantiate(ButtonPrefab, ItemContainer);
+                    questButton.GetComponentInChildren<TMP_Text>().text = questLog.GetQuests()[i].QuestName;
+                    TMP_Text objectiveText = questButton.transform.Find("QuestObjectiveText").GetComponent<TMP_Text>();
+                    var currItem = questLog.GetQuests()[i];
+                    if (objectiveText != null)
+                    {
+                        objectiveText.text = $"Цель: {questLog.GetQuests()[i].Objective}";
+                    }
+
+                    questButton.Init(questLog.GetQuests()[i], () => ShowDetails(currItem));
                 }
-                questButton.Init(quest, () => ShowDetails(currItem));
             }
         }
     }

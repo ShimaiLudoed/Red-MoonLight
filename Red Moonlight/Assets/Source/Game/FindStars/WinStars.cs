@@ -13,6 +13,7 @@ public class WinStars : MonoBehaviour
   }
   private void Win()
   {
+    gameObject.SetActive(false);
     Debug.Log("опял");
     quest.CompleteQuest();
   }

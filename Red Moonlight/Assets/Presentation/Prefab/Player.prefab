@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 7540143914662588716}
   - component: {fileID: 5047529122808398879}
   - component: {fileID: 2604665222953507545}
-  - component: {fileID: 5934958920329422570}
-  - component: {fileID: 2122293849826377958}
+  - component: {fileID: 7048506243584092848}
+  - component: {fileID: 7175553635185219945}
+  - component: {fileID: 1790433709398960697}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -181,7 +182,7 @@ MonoBehaviour:
   ItemContainer: {fileID: 0}
   DetailsText: {fileID: 0}
   DetailsImage: {fileID: 0}
---- !u!114 &5934958920329422570
+--- !u!114 &7048506243584092848
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -199,7 +200,7 @@ MonoBehaviour:
   DetailsText: {fileID: 0}
   DetailsImage: {fileID: 0}
   questLog: {fileID: 0}
---- !u!114 &2122293849826377958
+--- !u!114 &7175553635185219945
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -216,3 +217,24 @@ MonoBehaviour:
   ItemContainer: {fileID: 0}
   DetailsText: {fileID: 0}
   DetailsImage: {fileID: 0}
+--- !u!95 &1790433709398960697
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8030301306426939558}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d4acd7a970cbfb142b7b27e6950f703f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

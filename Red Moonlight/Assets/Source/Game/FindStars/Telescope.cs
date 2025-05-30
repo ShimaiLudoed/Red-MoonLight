@@ -12,6 +12,7 @@ public class Telescope : MonoBehaviour
   private int _allConstellations;
   private bool _hasWon;
   public static Action onWin;
+  
   private void Update()
   {
     Vector2 mousePosition = Input.mousePosition;
