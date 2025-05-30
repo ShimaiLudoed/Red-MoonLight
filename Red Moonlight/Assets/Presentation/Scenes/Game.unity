@@ -8343,15 +8343,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5047529122808398879, guid: afd6665e0ab21d044bd46d9591b96adc, type: 3}
       propertyPath: m_Size.y
-      value: 4.9028673
+      value: 6.0646505
       objectReference: {fileID: 0}
     - target: {fileID: 5047529122808398879, guid: afd6665e0ab21d044bd46d9591b96adc, type: 3}
       propertyPath: m_Offset.x
-      value: -0.0181427
+      value: -0.01814273
       objectReference: {fileID: 0}
     - target: {fileID: 5047529122808398879, guid: afd6665e0ab21d044bd46d9591b96adc, type: 3}
       propertyPath: m_Offset.y
-      value: -0.036284924
+      value: 0.5446066
       objectReference: {fileID: 0}
     - target: {fileID: 7048506243584092848, guid: afd6665e0ab21d044bd46d9591b96adc, type: 3}
       propertyPath: _panel
