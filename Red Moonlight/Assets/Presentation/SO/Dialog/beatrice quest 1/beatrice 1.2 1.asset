@@ -15,3 +15,5 @@ MonoBehaviour:
   <DialogueContent>k__BackingField: "\u0411\u0435\u0430\u0442\u0440\u0438\u0441 :
     \u041E! \u0412\u044B \u043D\u0430\u0448\u043B\u0438! "
   <GivesQuest>k__BackingField: 0
+  <OpenGame>k__BackingField: 0
+  <CutScene>k__BackingField: 1

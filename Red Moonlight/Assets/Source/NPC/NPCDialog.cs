@@ -1,8 +1,10 @@
 using Core;
 using Data;
+using System.Collections;
 using UnityEngine;
 using Utils;
 using TMPro;
+using UnityEngine.UI;
 
 namespace NPC
 {
@@ -20,6 +22,9 @@ namespace NPC
         [SerializeField] private TMP_Text dialogueText;
         private bool _isFirst = true;
         [SerializeField] private GameObject game;
+        [SerializeField] private Sprite[] cutsceneImages;
+        [SerializeField] private Image cutsceneRenderer;
+        [SerializeField] private GameObject playerCut;
 
         private void Start()
         {
@@ -112,6 +117,12 @@ namespace NPC
                         game.SetActive(true);
                     }
                 }
+
+                if (currentDialogue.CutScene)
+                {
+                    playerCut.SetActive(false);
+                    StartCoroutine(PlayCutscene());
+                }
                 _currentDialogueIndex++;
             }
             else
@@ -121,6 +132,18 @@ namespace NPC
                 _currentSetIndex++;
                 _currentDialogueIndex = 0;
             }
+        }
+        private IEnumerator PlayCutscene()
+        {
+            dialoguePanel.SetActive(false); 
+            cutsceneRenderer.gameObject.SetActive(true);
+            foreach (var image in cutsceneImages)
+            {
+                cutsceneRenderer.sprite = image;
+                yield return new WaitForSeconds(5f); 
+            }
+            cutsceneRenderer.gameObject.SetActive(false); 
+            playerCut.SetActive(true);
         }
 
         private void AssignQuest()

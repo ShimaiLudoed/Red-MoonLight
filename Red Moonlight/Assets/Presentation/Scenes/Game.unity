@@ -2350,6 +2350,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.2166786, y: 6.317337}
   m_EdgeRadius: 0
+--- !u!1 &382086646 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8030301306426939558, guid: afd6665e0ab21d044bd46d9591b96adc, type: 3}
+  m_PrefabInstance: {fileID: 1182385732}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &384507709
 GameObject:
   m_ObjectHideFlags: 0
@@ -2706,6 +2711,9 @@ MonoBehaviour:
   dialoguePanel: {fileID: 938208239}
   dialogueText: {fileID: 1386587009}
   game: {fileID: 1636355628}
+  cutsceneImages: []
+  cutsceneRenderer: {fileID: 1307560359}
+  playerCut: {fileID: 382086646}
 --- !u!114 &401493290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3886,7 +3894,7 @@ Transform:
   m_GameObject: {fileID: 548145963}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.16866226, y: -13.21744, z: -10}
+  m_LocalPosition: {x: 25.000282, y: 78.3158, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6573,7 +6581,7 @@ Transform:
   m_GameObject: {fileID: 975208339}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.7, y: -13.5, z: -10}
+  m_LocalPosition: {x: 26.6, y: 78.3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6585,7 +6593,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8395632035510035002, guid: afd6665e0ab21d044bd46d9591b96adc, type: 3}
   m_PrefabInstance: {fileID: 1182385732}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 382086646}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8f03229d5dcf47d42968d4c78f317883, type: 3}
@@ -6601,7 +6609,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2604665222953507545, guid: afd6665e0ab21d044bd46d9591b96adc, type: 3}
   m_PrefabInstance: {fileID: 1182385732}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 382086646}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5dd1f27d9d6ee9141bac793c346370aa, type: 3}
@@ -6612,7 +6620,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7048506243584092848, guid: afd6665e0ab21d044bd46d9591b96adc, type: 3}
   m_PrefabInstance: {fileID: 1182385732}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 382086646}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 355054beafc194c4cb6d6bc134bf7019, type: 3}
@@ -6623,7 +6631,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7175553635185219945, guid: afd6665e0ab21d044bd46d9591b96adc, type: 3}
   m_PrefabInstance: {fileID: 1182385732}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 382086646}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e23314b92c9ec774b95238f082f7b4e3, type: 3}
@@ -7579,6 +7587,11 @@ MonoBehaviour:
   dialoguePanel: {fileID: 938208239}
   dialogueText: {fileID: 1386587009}
   game: {fileID: 1903419529}
+  cutsceneImages:
+  - {fileID: 21300000, guid: 50728ae3cd016884eb14310c335d12be, type: 3}
+  - {fileID: 21300000, guid: ef1fc68b18a00c14ebad68820ae2ee3f, type: 3}
+  cutsceneRenderer: {fileID: 1307560359}
+  playerCut: {fileID: 382086646}
 --- !u!114 &1145309323
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8279,11 +8292,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4014940160747560454, guid: afd6665e0ab21d044bd46d9591b96adc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.7
+      value: 26.6
       objectReference: {fileID: 0}
     - target: {fileID: 4014940160747560454, guid: afd6665e0ab21d044bd46d9591b96adc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -13.5
+      value: 78.3
       objectReference: {fileID: 0}
     - target: {fileID: 4014940160747560454, guid: afd6665e0ab21d044bd46d9591b96adc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9094,6 +9107,81 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1306273270}
+  m_CullTransparentMesh: 1
+--- !u!1 &1307560357
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1307560358}
+  - component: {fileID: 1307560360}
+  - component: {fileID: 1307560359}
+  m_Layer: 5
+  m_Name: Image
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1307560358
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307560357}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 9.5461}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1601299956}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1307560359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307560357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1307560360
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307560357}
   m_CullTransparentMesh: 1
 --- !u!224 &1312564585 stripped
 RectTransform:
@@ -11899,6 +11987,9 @@ PrefabInstance:
     - {fileID: 6462305098451208624, guid: 71e3186b6cbed6548b2af9bceeaa4889, type: 3}
     - {fileID: 5323958583764123326, guid: 71e3186b6cbed6548b2af9bceeaa4889, type: 3}
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 1460135289668128008, guid: 71e3186b6cbed6548b2af9bceeaa4889, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1307560358}
     - targetCorrespondingSourceObject: {fileID: 3341238468913122887, guid: 71e3186b6cbed6548b2af9bceeaa4889, type: 3}
       insertIndex: -1
       addedObject: {fileID: 614761075}
@@ -13019,6 +13110,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1595165119}
   m_CullTransparentMesh: 1
+--- !u!224 &1601299956 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1460135289668128008, guid: 71e3186b6cbed6548b2af9bceeaa4889, type: 3}
+  m_PrefabInstance: {fileID: 1391065252}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1609218592
 GameObject:
   m_ObjectHideFlags: 0
@@ -13322,6 +13418,9 @@ MonoBehaviour:
   dialoguePanel: {fileID: 938208239}
   dialogueText: {fileID: 1386587009}
   game: {fileID: 1262279828}
+  cutsceneImages: []
+  cutsceneRenderer: {fileID: 1307560359}
+  playerCut: {fileID: 382086646}
 --- !u!114 &1635317819
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13734,6 +13833,9 @@ MonoBehaviour:
   dialoguePanel: {fileID: 938208239}
   dialogueText: {fileID: 1386587009}
   game: {fileID: 0}
+  cutsceneImages: []
+  cutsceneRenderer: {fileID: 0}
+  playerCut: {fileID: 0}
 --- !u!114 &1675243003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15476,6 +15578,9 @@ MonoBehaviour:
   dialoguePanel: {fileID: 938208239}
   dialogueText: {fileID: 1386587009}
   game: {fileID: 20284475}
+  cutsceneImages: []
+  cutsceneRenderer: {fileID: 1307560359}
+  playerCut: {fileID: 382086646}
 --- !u!61 &2040521737
 BoxCollider2D:
   m_ObjectHideFlags: 0
