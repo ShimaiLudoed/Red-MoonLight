@@ -1,13 +1,16 @@
 using Data;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 public class XOGame : MonoBehaviour
 {
     [SerializeField] private Button[] buttons; 
-    [SerializeField] private TMP_Text statusText; 
+    [SerializeField] private TMP_Text statusText; // Если вы используете изображение для статуса вместо текста
+    [SerializeField] private Sprite playerSprite; 
+    [SerializeField] private Sprite botSprite; 
+    [SerializeField] private Sprite emptySprite; 
     private string _currentPlayer; 
     private bool _isBotTurn; 
     [SerializeField] private QuestSO quest;
@@ -15,14 +18,14 @@ public class XOGame : MonoBehaviour
     {
         _currentPlayer = "X"; 
         _isBotTurn = false; 
-        statusText.text = "Игрок X, ваш ход!";
+        statusText.GetComponent<TMP_Text>().text = "Игрок X, ваш ход!";
         ResetGame(); 
     }
     public void PlayerMove(int index)
     {
-        if (buttons[index].GetComponentInChildren<TMP_Text>().text == "" && !_isBotTurn)
+        if (buttons[index].GetComponent<Image>().sprite == emptySprite && !_isBotTurn)
         {
-            buttons[index].GetComponentInChildren<TMP_Text>().text = _currentPlayer;
+            buttons[index].GetComponent<Image>().sprite = playerSprite; 
             CheckForWinner();
             SwitchPlayer();
         }
@@ -32,13 +35,13 @@ public class XOGame : MonoBehaviour
         if (_isBotTurn)
         {
             _currentPlayer = "X"; 
-            statusText.text = "Игрок X, ваш ход!";
+            statusText.GetComponent<TMP_Text>().text = "Игрок X, ваш ход!";
             _isBotTurn = false;
         }
         else
         {
             _currentPlayer = "O"; 
-            statusText.text = $"Ход бота {_currentPlayer}...";
+            statusText.GetComponent<TMP_Text>().text = $"Ход бота {_currentPlayer}...";
             _isBotTurn = true;
             StartCoroutine(BotMove());
         }
@@ -49,7 +52,7 @@ public class XOGame : MonoBehaviour
         int index = GetRandomEmptyCellIndex();
         if (index != -1)
         {
-            buttons[index].GetComponentInChildren<TMP_Text>().text = _currentPlayer;
+            buttons[index].GetComponent<Image>().sprite = botSprite; 
             CheckForWinner();
             SwitchPlayer(); 
         }
@@ -59,7 +62,7 @@ public class XOGame : MonoBehaviour
         List<int> emptyCells = new List<int>(); 
         for (int i = 0; i < buttons.Length; i++)
         {
-            if (buttons[i].GetComponentInChildren<TMP_Text>().text == "")
+            if (buttons[i].GetComponent<Image>().sprite == emptySprite)
             {
                 emptyCells.Add(i);
             }
@@ -85,13 +88,13 @@ public class XOGame : MonoBehaviour
         };
         for (int i = 0; i < winConditions.GetLength(0); i++)
         {
-            if (buttons[winConditions[i, 0]].GetComponentInChildren<TMP_Text>().text != ""
-                && buttons[winConditions[i, 0]].GetComponentInChildren<TMP_Text>().text
-                == buttons[winConditions[i, 1]].GetComponentInChildren<TMP_Text>().text
-                && buttons[winConditions[i, 1]].GetComponentInChildren<TMP_Text>().text
-                == buttons[winConditions[i, 2]].GetComponentInChildren<TMP_Text>().text)
+            if (buttons[winConditions[i, 0]].GetComponent<Image>().sprite != emptySprite &&
+                buttons[winConditions[i, 0]].GetComponent<Image>().sprite ==
+                buttons[winConditions[i, 1]].GetComponent<Image>().sprite &&
+                buttons[winConditions[i, 1]].GetComponent<Image>().sprite ==
+                buttons[winConditions[i, 2]].GetComponent<Image>().sprite)
             {
-                string winner = buttons[winConditions[i, 0]].GetComponentInChildren<TMP_Text>().text;
+                string winner = buttons[winConditions[i, 0]].GetComponent<Image>().sprite == playerSprite ? "X" : "O";
                 if (winner == "X")
                 {
                     quest.CompleteQuest();
@@ -108,7 +111,7 @@ public class XOGame : MonoBehaviour
         bool isDraw = true;
         foreach (Button button in buttons)
         {
-            if (button.GetComponentInChildren<TMP_Text>().text == "")
+            if (button.GetComponent<Image>().sprite == emptySprite)
             {
                 isDraw = false;
                 break;
@@ -122,22 +125,29 @@ public class XOGame : MonoBehaviour
     }
     private void EndGame(string result)
     {
-        statusText.text = result;
+        statusText.GetComponent<TMP_Text>().text = result;
         for (int i = 0; i < buttons.Length; i++)
         {
             buttons[i].interactable = false; 
         }
         Debug.Log("Игра окончена: " + result); 
+        StartCoroutine(ResetGameAfterDelay(1f));
+    }
+    private IEnumerator ResetGameAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        gameObject.SetActive(false);
+        ResetGame(); 
     }
     public void ResetGame()
     {
         foreach (Button button in buttons)
         {
-            button.GetComponentInChildren<TMP_Text>().text = ""; 
+            button.GetComponent<Image>().sprite = emptySprite; 
             button.interactable = true; 
         }
         _currentPlayer = "X";
         _isBotTurn = false; 
-        statusText.text = "Игрок X, ваш ход!";
+        statusText.GetComponent<TMP_Text>().text = "Игрок X, ваш ход!";
     }
 }

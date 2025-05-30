@@ -2377,7 +2377,7 @@ MonoBehaviour:
   m_Padding:
     m_Left: 10
     m_Right: 0
-    m_Top: 10
+    m_Top: 50
     m_Bottom: 0
   m_ChildAlignment: 0
   m_Spacing: -70
@@ -4001,7 +4001,7 @@ PrefabInstance:
     - target: {fileID: 1277515016378088451, guid: 6f480f2d058ffb747813dcb85708cd6f, type: 3}
       propertyPath: quest
       value: 
-      objectReference: {fileID: 11400000, guid: c88a7143922da7d45a4f773639fb6d2d, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 4375644709791995623, guid: 6f480f2d058ffb747813dcb85708cd6f, type: 3}
       propertyPath: m_Name
       value: XOGame

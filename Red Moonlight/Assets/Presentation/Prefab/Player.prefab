@@ -10,12 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4014940160747560454}
   - component: {fileID: 4519894074551707439}
-  - component: {fileID: 2901853514296107397}
   - component: {fileID: 8395632035510035002}
-  - component: {fileID: 3932362300584414067}
   - component: {fileID: 7540143914662588716}
   - component: {fileID: 5047529122808398879}
   - component: {fileID: 2604665222953507545}
+  - component: {fileID: 5934958920329422570}
+  - component: {fileID: 2122293849826377958}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -90,23 +90,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &2901853514296107397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8030301306426939558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e24ec34174ee4174cb10557584514a48, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inventoryPanel: {fileID: 0}
-  ItemButtonPrefab: {fileID: 0}
-  ItemContainer: {fileID: 0}
-  ItemDetailsText: {fileID: 0}
-  ItemDetailsImage: {fileID: 0}
 --- !u!114 &8395632035510035002
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,24 +102,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f03229d5dcf47d42968d4c78f317883, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3932362300584414067
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8030301306426939558}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff1deb0465fb37648af70bd2c1428f06, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  questLog: {fileID: 0}
-  questPanel: {fileID: 0}
-  questButtonPrefab: {fileID: 3414140800898448237, guid: 32c720186da52014d9f639c768712a5f, type: 3}
-  questListContainer: {fileID: 0}
-  questDetailsText: {fileID: 0}
-  questDetailsImage: {fileID: 0}
 --- !u!50 &7540143914662588716
 Rigidbody2D:
   serializedVersion: 4
@@ -212,7 +177,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _panel: {fileID: 0}
-  ButtonPrefab: {fileID: 0}
+  ButtonPrefab: {fileID: 2510878829399689888, guid: e116c211ec4cfee4a97cb138ae9095ec, type: 3}
+  ItemContainer: {fileID: 0}
+  DetailsText: {fileID: 0}
+  DetailsImage: {fileID: 0}
+--- !u!114 &5934958920329422570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8030301306426939558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 355054beafc194c4cb6d6bc134bf7019, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _panel: {fileID: 0}
+  ButtonPrefab: {fileID: 8800585847395224478, guid: 32c720186da52014d9f639c768712a5f, type: 3}
+  ItemContainer: {fileID: 0}
+  DetailsText: {fileID: 0}
+  DetailsImage: {fileID: 0}
+  questLog: {fileID: 0}
+--- !u!114 &2122293849826377958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8030301306426939558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e23314b92c9ec774b95238f082f7b4e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _panel: {fileID: 0}
+  ButtonPrefab: {fileID: 2405929827385252443, guid: 9e16d630483f0c741b482ad81175a940, type: 3}
   ItemContainer: {fileID: 0}
   DetailsText: {fileID: 0}
   DetailsImage: {fileID: 0}

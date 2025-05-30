@@ -19,6 +19,7 @@ namespace NPC
         [SerializeField] private GameObject dialoguePanel;
         [SerializeField] private TMP_Text dialogueText;
         private bool _isFirst = true;
+        [SerializeField] private GameObject game;
 
         private void Start()
         {
@@ -75,6 +76,13 @@ namespace NPC
                     dialoguePanel.SetActive(true);
                     UseCurrentDialogueSet();
                 }
+                if (_currentQuest != null)
+                {
+                    if (_currentQuest.IsCompleted)
+                    {
+                        Complete();
+                    }
+                }
             }
             else
             {
@@ -99,6 +107,10 @@ namespace NPC
                     Debug.Log($"{NpcSO.NPCName}: Разговор с набором {_currentSetIndex + 1} завершен.");
                     _currentSetIndex++;
                     _currentDialogueIndex = 0;
+                    if (currentDialogue.OpenGame)
+                    {
+                        game.SetActive(true);
+                    }
                 }
                 _currentDialogueIndex++;
             }
@@ -124,6 +136,8 @@ namespace NPC
             }
             else
             {
+                Debug.Log(_currentSetIndex);
+                Debug.Log(NpcSO.QuestSo[_currentSetIndex]);
                 Debug.Log($"{NpcSO.NPCName}: Нет доступных квестов для этого набора диалогов.");
                 QuestSO.OnQuest -= Complete;
             }

@@ -18,7 +18,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 24b5b3717757a5242bf698051388c7aa, type: 2}
   - {fileID: 11400000, guid: 21664decd4709ab4cacdb1260d43bcab, type: 2}
   - {fileID: 11400000, guid: 8c58eebd7c1c9b34483b6ec6dd8a0572, type: 2}
-  <Image>k__BackingField: {fileID: 0}
+  ImageForBook: {fileID: 21300000, guid: 526c96a5038411f449b596db9f9c4f91, type: 3}
+  <Image>k__BackingField: {fileID: 21300000, guid: 4c9213b2be357f24aa8d3e53332028ae, type: 3}
+  NPCDetails: 
   <QuestSo>k__BackingField:
   - {fileID: 11400000, guid: 3b1a410272828f545a35e9170ae73ad3, type: 2}
+  - {fileID: 11400000, guid: e6eac51e404675a4a99f1b90bc9da915, type: 2}
   - {fileID: 11400000, guid: ccffe09f564850547beaec437d69e77e, type: 2}

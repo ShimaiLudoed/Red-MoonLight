@@ -21,6 +21,7 @@ public class NoteGameManager : MonoBehaviour
         if (_score == _winScore)
         {
             quest.CompleteQuest();
+            gameObject.SetActive(false);
         }
     }
     void UpdateScoreText()

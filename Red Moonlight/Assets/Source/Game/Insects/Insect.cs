@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,11 @@ public class Insect : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
   [SerializeField] private RectTransform rectTransform;
   [SerializeField] public bool onNonTray = false;
   [SerializeField] public bool onTray = false;
+
+  private void Start()
+  {
+
+  }
 
   public void OnBeginDrag(PointerEventData eventData)
   {

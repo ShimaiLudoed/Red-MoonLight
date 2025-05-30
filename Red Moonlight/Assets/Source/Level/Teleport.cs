@@ -1,4 +1,5 @@
 using Core;
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,9 @@ public class Teleport : MonoBehaviour
     [SerializeField] private LayerMask playerLayer;
     [SerializeField] private Transform playerTransform;
     [SerializeField] private Transform cameraPlayer;
+    [SerializeField] [ItemCanBeNull] private Music music;
+    [SerializeField] [ItemCanBeNull] private AudioClip roomMusic;
+    [SerializeField] private bool isStory;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -31,5 +35,9 @@ public class Teleport : MonoBehaviour
         cameraPlayer.position = teleportLocation.position;
         playerTransform.position = teleportLocation.position;
         InputListener.OnInteract -= TeleportToPoint;
+        if (isStory)
+        {
+            music.PlayRoomMusic(roomMusic);
+        }
     }
 }

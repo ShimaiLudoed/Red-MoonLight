@@ -9,10 +9,9 @@ public class WinStars : MonoBehaviour
   [SerializeField] private QuestSO quest;
   private void Start()
   {
-    Telescope.onWin += win;
+    Telescope.onWin += Win;
   }
-
-  private void win()
+  private void Win()
   {
     Debug.Log("опял");
     quest.CompleteQuest();
